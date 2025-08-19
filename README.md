@@ -130,7 +130,7 @@ function MySystem:ask(msg, info)
             e.y = 0
         end
     -- second type of message
-    elseif msg == "GetEntities" do
+    elseif msg == "GetEntities" then
         return self.entities
     end
 end
