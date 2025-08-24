@@ -124,10 +124,10 @@ The `ask` function is the most interesting and it allows different systems to co
 ```lua
 function MySystem:ask(msg, info)
     -- first type of message
-    if msg == "ResetAllPositions" then
+    if msg == "SetAllPositions" then
         for e in all(self.entities) do
-            e.x = 0
-            e.y = 0
+            e.x = info.x
+            e.y = info.y
         end
     -- second type of message
     elseif msg == "GetEntities" then
@@ -139,10 +139,10 @@ end
 Then, we can send messages to this system from anywhere else in the program like this:
 
 ```lua
-es8:ask("MySystem", "ResetAllPositions")
+es8:ask("MySystem", "SetAllPositions", { x = 0, y = 0 })
 ```
 
-Which will reset the position of every entity processed by the system to `(0, 0)`. Or:
+Which will set the position of every entity processed by the system to `(0, 0)`. Or:
 
 ```lua
 system_entities = es8:ask("MySystem", "GetEntities")
