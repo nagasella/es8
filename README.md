@@ -10,7 +10,7 @@ I used ES8 in my first PICO-8 release, [The Test](https://www.lexaloffle.com/bbs
 
 You can use ES8 by downloading the file `es8.lua` in the same directory as your `.p8` game, and including it like this:
 
-```lua
+```
 #include es8.lua
 ```
 
